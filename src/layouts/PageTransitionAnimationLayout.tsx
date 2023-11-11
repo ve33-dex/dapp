@@ -5,7 +5,7 @@ import {useRouter} from "next/router";
 interface IBaseLayout {
     children: React.ReactNode
 }
-const PageTransitionAnimations = ({children}: IBaseLayout) => {
+const PageTransitionAnimationLayout = ({children}: IBaseLayout) => {
     const router = useRouter()
     return (
         <AnimatePresence mode='wait'>
@@ -37,4 +37,4 @@ const PageTransitionAnimations = ({children}: IBaseLayout) => {
     );
 };
 
-export default PageTransitionAnimations;
+export default PageTransitionAnimationLayout;

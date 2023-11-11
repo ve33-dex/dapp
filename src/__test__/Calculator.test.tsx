@@ -3,6 +3,7 @@ import {act, fireEvent, render, screen} from "@testing-library/react";
 import Calculator from "../components/Calculator";
 
 
+
 const setup = () => {
     const utils = render(<Calculator/>)
     // check component is rendered

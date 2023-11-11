@@ -4,16 +4,16 @@ services:
     build:
       context: ../
       dockerfile: ./docker/Dockerfile # Adjust the context to the root of your project
-    container_name: "mazda-app"
+    container_name: "ve33-dex"
 
   app1:
     build:
       context: ../
       dockerfile: ./docker/Dockerfile # Adjust the context to the root of your project
-    container_name: "mazda-app-2"
+    container_name: "ve33-dex-2"
 
   nginx:
-    container_name: "mazda-app-NGINX"
+    container_name: "ve33-dex-NGINX"
     image: nginx
     ports:
       - "8080:80"

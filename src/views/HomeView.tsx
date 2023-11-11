@@ -2,9 +2,11 @@ import React from 'react';
 
 const HomeView = () => {
     return (
-        <div>
-            home
-        </div>
+        <main>
+            <h1 className='gradient-text'>
+                J$WAP
+            </h1>
+        </main>
     );
 };
 

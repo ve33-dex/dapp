@@ -4,6 +4,7 @@ import Link from "next/link";
 import Moon from "@/assets/icons/moon.svg";
 import Menu from "@/assets/icons/etc.svg";
 import Logo from '@/assets/icons/Logo.svg'
+import ThemeSwitcher from "@/themes/ThemeSwitcher";
 
 function Navbar() {
     return (
@@ -34,9 +35,10 @@ function Navbar() {
                 <button className="btn mx-2 rounded-3xl text-custom font-bolder">
                     Connect to Wallet
                 </button>
-                <button className="btn mx-2 p-0 rounded-3xl text-custom font-bolder">
-                    <Image src={Moon} width={50} height={50} alt={"change theme"}/>
-                </button>
+                {/*<button className="btn mx-2 p-0 rounded-3xl text-custom font-bolder">*/}
+                    {/*<Image src={Moon} width={50} height={50} alt={"change theme"}/>*/}
+                    <ThemeSwitcher/>
+                {/*</button>*/}
                 <button className="btn ms-2 p-0 rounded-3xl text-custom font-bolder">
                     <Image src={Menu} width={50} height={50} alt={"open menu button"}/>
                 </button>

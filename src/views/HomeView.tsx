@@ -7,20 +7,21 @@ import Image from "next/image";
 
 function HomeView() {
 
-    const [modalState , setModalState] = useState<boolean>(false)
+    const [modalState, setModalState] = useState<boolean>(false)
 
     return (
         <section className="flex w-full justify-center p-10 ">
             <div className="w-[375px] p-3 min-h-[415px] shadow shadow-gray-900 bg-gray-900 rounded-xl ">
-
                 <div className="w-full relative p-1 flex items-center justify-between">
                     <div className="w-1/3"></div>
                     <div className="w-1/3 text-center text-xl font-bold">swap</div>
-                    <button onClick={() => modalState ? setModalState(false) : setModalState(true)} className="btn w-1/3 bg-transparent hover:bg-transparent flex justify-end border-0">
+                    <button onClick={() => modalState ? setModalState(false) : setModalState(true)}
+                            className="btn w-1/3 bg-transparent hover:bg-transparent flex justify-end border-0">
                         <Image src={SettingIcon} alt={"setting"}/>
                     </button>
                     {
-                        modalState &&  <div className="w-3/4 z-10 flex flex-wrap min-h-full rounded bg-gray-800 absolute top-full right-5  shadow shadow-gray-600 p-2">
+                        modalState && <div
+                            className="w-3/4 z-10 flex flex-wrap min-h-full rounded bg-gray-800 absolute top-full right-5  shadow shadow-gray-600 p-2">
                             <div className="w-full font-bold p-1  text-xl text-center">
                                 Transaction Setting
                             </div>
@@ -32,7 +33,8 @@ function HomeView() {
                                     <button className="btn bg-gray-800 m-0 p-0 w-auto px-1.5  ">0.1%</button>
                                     <button className="btn bg-gray-800 m-0 p-0 w-auto px-1.5  ">0.5%</button>
                                     <button className="btn bg-gray-800 m-0 p-0 w-auto px-1.5  ">1%</button>
-                                    <input type="text" placeholder="100%" className="input input-bordered input-md w-1/4 max-w-xs px-2" />
+                                    <input type="text" placeholder="100%"
+                                           className="input input-bordered input-md w-1/4 max-w-xs px-2"/>
                                 </div>
                             </div>
                             <div className="w-full flex flex-wrap  mt-5">
@@ -40,7 +42,8 @@ function HomeView() {
                                     Slippage Deadline
                                 </div>
                                 <div className="flex w-full my-2 px-2 items-center">
-                                    <input type="number" placeholder="20" className="input bg-gray-800 input-bordered input-sm w-1/4 max-w-xs px-2" />
+                                    <input type="number" placeholder="20"
+                                           className="input bg-gray-800 input-bordered input-sm w-1/4 max-w-xs px-2"/>
                                     <div className="text-gray-600 mx-1">minutes</div>
                                 </div>
                             </div>
@@ -51,11 +54,11 @@ function HomeView() {
                                 <div className="flex flex-wrap w-full my-2 px-2 items-center">
                                     <div className="w-full my-2 flex justify-between items-center">
                                         Toggle Expert Mode
-                                        <input type="checkbox" className="toggle toggle-md"  />
+                                        <input type="checkbox" className="toggle toggle-md"/>
                                     </div>
                                     <div className="w-full my-2 flex justify-between items-center">
                                         Disable Multi hops
-                                        <input type="checkbox" className="toggle toggle-md"  />
+                                        <input type="checkbox" className="toggle toggle-md"/>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +85,8 @@ function HomeView() {
                     </div>
                 </div>
                 <div className="relative w-full border-b border-gray-600 my-8">
-                    <Image src={ArrowUpDown} alt={"swap"} className="absolute right-2 btn p-3 w-auto  rounded-full -top-6" />
+                    <Image src={ArrowUpDown} alt={"swap"}
+                           className="absolute right-2 btn p-3 w-auto  rounded-full -top-6"/>
                 </div>
                 <div className="p-2 w-full flex items-center flex-wrap">
                     <div className="w-full">Swap To</div>
@@ -91,15 +95,16 @@ function HomeView() {
                         <div className="text-gray-600 w-full">Balance: 70.42</div>
                     </div>
                     <div className="w-1/2 flex flex-wrap items-center pb-4 justify-center">
-                        <label htmlFor="my_modal_7" className="bg-custom btn text-white capitalize flex text-center rounded-full w-auto p-3">
+                        <label htmlFor="my_modal_7"
+                               className="bg-custom btn text-white capitalize flex text-center rounded-full w-auto p-3">
                             Select a Token
-                            <Image src={ArrowDown} alt={"select token"} />
+                            <Image src={ArrowDown} alt={"select token"}/>
                         </label>
                     </div>
 
                 </div>
                 {/* Put this part before </body> tag */}
-                <input type="checkbox" id="my_modal_7" className="modal-toggle" />
+                <input type="checkbox" id="my_modal_7" className="modal-toggle"/>
                 <div className="modal backdrop-blur-sm">
                     <div className="modal-box bg-slate-900">
                         <h3 className="text-lg font-bold text-center">Select a Token </h3>
@@ -108,43 +113,52 @@ function HomeView() {
                             <div className="w-full p-2 flex justify-center">
                                 <div className="form-control">
                                     <div className="input-group input-group-lg">
-                                        <input type="text" placeholder="Search…" className="input input-bordered" />
+                                        <input type="text" placeholder="Search…" className="input input-bordered"/>
                                         <button className="btn btn-square">
-                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
+                                                 viewBox="0 0 24 24" stroke="currentColor">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                            </svg>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <div className="w-full flex flex-wrap  bg-gray-800 rounded-xl p-2 mt-5">
-                                <div className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
+                                <div
+                                    className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
                                     <div className="w-2/12 flex p-1">
                                         <figure className="p-5 rounded-xl border "></figure>
                                     </div>
                                     <div className="p-3 rounded-xl w-7/12">Fardin Token</div>
                                     <div className="p-1 rounded-xl w-3/12">10.1023 FTM</div>
                                 </div>
-                                <div className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
+                                <div
+                                    className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
                                     <div className="w-2/12 flex p-1">
                                         <figure className="p-5 rounded-xl border "></figure>
                                     </div>
                                     <div className="p-3 rounded-xl w-7/12">Fardin Token</div>
                                     <div className="p-1 rounded-xl w-3/12">10.1023 FTM</div>
                                 </div>
-                                <div className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
+                                <div
+                                    className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
                                     <div className="w-2/12 flex p-1">
                                         <figure className="p-5 rounded-xl border "></figure>
                                     </div>
                                     <div className="p-3 rounded-xl w-7/12">Fardin Token</div>
                                     <div className="p-1 rounded-xl w-3/12">10.1023 FTM</div>
                                 </div>
-                                <div className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
+                                <div
+                                    className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
                                     <div className="w-2/12 flex p-1">
                                         <figure className="p-5 rounded-xl border "></figure>
                                     </div>
                                     <div className="p-3 rounded-xl w-7/12">Fardin Token</div>
                                     <div className="p-1 rounded-xl w-3/12">10.1023 FTM</div>
                                 </div>
-                                <div className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
+                                <div
+                                    className="w-full flex items-center border border-transparent my-3 duration-500 hover:border-primary justify-between  bg-gray-900 rounded-xl p-2 ">
                                     <div className="w-2/12 flex p-1">
                                         <figure className="p-5 rounded-xl border "></figure>
                                     </div>
@@ -159,7 +173,8 @@ function HomeView() {
                     <label className="modal-backdrop" htmlFor="my_modal_7">Close</label>
                 </div>
                 <div className="w-full p-2 mt-5">
-                    <button disabled className="btn w-full rounded-full  disabled:text-gray-600  text-white capitalize ">
+                    <button disabled
+                            className="btn w-full rounded-full  disabled:text-gray-600  text-white capitalize ">
                         Enter an Amount
                     </button>
                 </div>

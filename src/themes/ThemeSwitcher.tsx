@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import {FiCheck, FiMoon, FiSun} from "react-icons/fi";
-import { HiMiniComputerDesktop } from "react-icons/hi2"; // Import HiMiniComputerDesktop for the system icon
-import { useLocalStorage } from "usehooks-ts";
-import {string} from "yup";
+import {HiMiniComputerDesktop} from "react-icons/hi2";
+import {useLocalStorage} from "usehooks-ts";
+
 
 const ThemeSwitcher = () => {
     // Retrieve the stored theme or use "dark" as the default.
-    const [storedTheme, setStoredTheme] = useLocalStorage("theme", "dark");
+    const [storedTheme, setStoredTheme] = useLocalStorage<"dark" | "light" | "system">("theme", "dark");
     // Create a state variable to track the selected theme.
-    const [selectedTheme, setSelectedTheme] = useState<string>(storedTheme);
+    const [selectedTheme, setSelectedTheme] = useState<"dark" | "light" | "system">(storedTheme);
 
     // Function to toggle the theme.
-    const toggleTheme = (newTheme:string) => {
+    const toggleTheme = (newTheme: "dark" | "light" | "system") => {
         setSelectedTheme(newTheme);
         setStoredTheme(newTheme);
     };
@@ -23,56 +23,57 @@ const ThemeSwitcher = () => {
     }, [selectedTheme]);
 
     return (
-        <div className="theme-switcher">
-            <div className="relative inline-block text-left">
-                <div className="relative">
-                    <button type="button" className="dropdown-button btn">
-                        {selectedTheme === "dark" ? (
-                            <FiMoon className="w-5 h-5" />
-                        ) : selectedTheme === "light" ? (
-                            <FiSun className="w-5 h-5" />
-                        ) : (
-                            <HiMiniComputerDesktop className="w-5 h-5" />
-                        )}
-                        {selectedTheme}
-                    </button>
-                </div>
-                <ul className="dropdown-menu">
-                    <li
-                        className="menu-item"
-                        onClick={() => toggleTheme("dark")}
-                    >
+        <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn mx-2 bg-transparent border-solid border-1 border-natural rounded-3xl">
+                {selectedTheme === "dark" ? (
+                    <FiMoon className="w-5 h-5"/>
+                ) : selectedTheme === "light" ? (
+                    <FiSun className="w-5 h-5"/>
+                ) : (
+                    <HiMiniComputerDesktop className="w-5 h-5"/>
+                )}
+            </label>
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-natural rounded-box w-52">
+
+                <li
+                    onClick={() => toggleTheme("dark")}
+                >
+                    <a>
                         {selectedTheme === "dark" && (
                             <span className="menu-badge">
-                                <FiCheck className="w-4 h-4" />
+                                <FiCheck className="w-4 h-4"/>
                             </span>
                         )}
                         Dark
-                    </li>
-                    <li
-                        className="menu-item"
-                        onClick={() => toggleTheme("light")}
-                    >
+                    </a>
+                </li>
+                <li
+
+                    onClick={() => toggleTheme("light")}
+                >
+                    <a>
                         {selectedTheme === "light" && (
                             <span className="menu-badge">
-                                <FiCheck className="w-4 h-4" />
+                                <FiCheck className="w-4 h-4"/>
                             </span>
                         )}
                         Light
-                    </li>
-                    <li
-                        className="menu-item"
-                        onClick={() => toggleTheme("system")}
-                    >
+                    </a>
+                </li>
+                <li
+
+                    onClick={() => toggleTheme("system")}
+                >
+                    <a>
                         {selectedTheme === "system" && (
                             <span className="menu-badge">
-                                <FiCheck className="w-4 h-4" />
+                                <FiCheck className="w-4 h-4"/>
                             </span>
                         )}
                         System
-                    </li>
-                </ul>
-            </div>
+                    </a>
+                </li>
+            </ul>
         </div>
     );
 };

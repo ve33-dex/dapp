@@ -10,8 +10,8 @@ function HomeView() {
     const [modalState, setModalState] = useState<boolean>(false)
 
     return (
-        <section className="flex w-full justify-center p-10 ">
-            <div className="w-[375px] p-3 min-h-[415px] shadow shadow-gray-900 bg-gray-900 rounded-xl ">
+        <section className="flex w-full justify-center p-10">
+            <div className="w-[375px] p-3 min-h-[415px] shadow shadow-gray-900 swap-card rounded-xl ">
                 <div className="w-full relative p-1 flex items-center justify-between">
                     <div className="w-1/3"></div>
                     <div className="w-1/3 text-center text-xl font-bold">swap</div>

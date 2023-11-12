@@ -1,0 +1,10 @@
+.nav-btn {
+    font-variant-numeric: lining-nums proportional-nums;
+
+    /* Btn/medium/normal */
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 171.429% */
+}

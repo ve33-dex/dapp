@@ -24,7 +24,7 @@ const ThemeSwitcher = () => {
 
     return (
         <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn mx-2 bg-transparent border-solid border-1 border-natural rounded-3xl">
+            <label tabIndex={0} className="btn custom-natural-bg mx-2 bg-transparent border-solid border-1 border-natural rounded-3xl">
                 {selectedTheme === "dark" ? (
                     <FiMoon className="w-5 h-5"/>
                 ) : selectedTheme === "light" ? (
@@ -33,11 +33,8 @@ const ThemeSwitcher = () => {
                     <HiMiniComputerDesktop className="w-5 h-5"/>
                 )}
             </label>
-            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-natural rounded-box w-52">
-
-                <li
-                    onClick={() => toggleTheme("dark")}
-                >
+            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow rounded-box w-52 nav-btn">
+                <li onClick={() => toggleTheme("dark")}>
                     <a>
                         {selectedTheme === "dark" && (
                             <span className="menu-badge">
@@ -47,10 +44,7 @@ const ThemeSwitcher = () => {
                         Dark
                     </a>
                 </li>
-                <li
-
-                    onClick={() => toggleTheme("light")}
-                >
+                <li onClick={() => toggleTheme("light")}>
                     <a>
                         {selectedTheme === "light" && (
                             <span className="menu-badge">
@@ -60,10 +54,7 @@ const ThemeSwitcher = () => {
                         Light
                     </a>
                 </li>
-                <li
-
-                    onClick={() => toggleTheme("system")}
-                >
+                <li onClick={() => toggleTheme("system")}>
                     <a>
                         {selectedTheme === "system" && (
                             <span className="menu-badge">

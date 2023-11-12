@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow:500|Poppins:700");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("./dark-theme.css");
+@import url("./light-theme.css");
+@import url("./navbar.css");
+@import url("./home.css");
+
 
 @tailwind base;
 @tailwind components;
@@ -328,3 +333,4 @@ a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+

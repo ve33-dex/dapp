@@ -9,11 +9,12 @@ import PageTransitionAnimationLayout from "@/layouts/PageTransitionAnimationLayo
 
 /* RainbowKit Requirements */
 import '@rainbow-me/rainbowkit/styles.css';
-import {darkTheme, getDefaultWallets, lightTheme, RainbowKitProvider} from '@rainbow-me/rainbowkit';
+import {getDefaultWallets, RainbowKitProvider} from '@rainbow-me/rainbowkit';
 import {configureChains, createConfig, WagmiConfig} from 'wagmi';
 import {arbitrum, base, mainnet, optimism, polygon, zora,} from 'wagmi/chains';
 import {alchemyProvider} from 'wagmi/providers/alchemy';
 import {publicProvider} from 'wagmi/providers/public';
+import {myRainbowCustomTheme} from "@/themes/rainbow/RainbowKitTheme";
 
 const {chains, publicClient} = configureChains(
     [mainnet, polygon, optimism, arbitrum, base, zora],
@@ -46,21 +47,7 @@ export default function App({Component, pageProps}: AppProps) {
     return <>
         <PageTransitionAnimationLayout>
             <WagmiConfig config={wagmiConfig}>
-                <RainbowKitProvider chains={chains}
-                                    theme={
-                                        {
-                                            lightMode: lightTheme(),
-                                            darkMode: darkTheme({
-                                                accentColor: '#7b3fe4',
-                                                accentColorForeground: 'white',
-                                                fontStack: 'rounded',
-                                                overlayBlur: 'large',
-                                                borderRadius: 'medium',
-                                            }),
-                                        }
-
-                                    }
-                >
+                <RainbowKitProvider chains={chains} theme={myRainbowCustomTheme}>
                     <Provider store={store}>
                         <Component {...pageProps} />
                     </Provider>

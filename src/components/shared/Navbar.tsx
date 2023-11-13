@@ -5,6 +5,7 @@ import Link from "next/link";
 import Menu from "@/assets/icons/etc.svg";
 import Logo from '@/assets/icons/Logo.svg'
 import ThemeSwitcher from "@/themes/ThemeSwitcher";
+import ConnectWalletButton from "@/components/extra/ConnectWalletButton";
 
 function Navbar() {
     return (
@@ -29,11 +30,8 @@ function Navbar() {
                         BRIDGE
                     </span>
                 </button>
-                <button className="btn mx-2 rounded-3xl font-bolder nav-btn">
-                    <span className='text-custom'>
-                        Connect to Wallet
-                    </span>
-                </button>
+
+                <ConnectWalletButton/>
                 {/*<ConnectButton  label="Connect to Wallet"*/}
                 {/*                accountStatus={{*/}
                 {/*                    smallScreen: 'avatar',*/}

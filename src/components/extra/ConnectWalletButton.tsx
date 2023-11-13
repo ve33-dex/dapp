@@ -1,5 +1,7 @@
 import {ConnectButton} from '@rainbow-me/rainbowkit';
 import React from "react";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 
 const ConnectWalletButton = () => {
     return (
@@ -74,10 +76,11 @@ const ConnectWalletButton = () => {
                                                 }}
                                             >
                                                 {chain.iconUrl && (
-                                                    <img
+                                                    <Image
                                                         alt={chain.name ?? 'Chain icon'}
                                                         src={chain.iconUrl}
-                                                        style={{width: 12, height: 12}}
+                                                        width={12}
+                                                        height={12}
                                                     />
                                                 )}
                                             </div>
@@ -101,8 +104,8 @@ const ConnectWalletButton = () => {
                     </div>
                 );
             }}
-        </ConnectButton.Custom>
-    );
+            </ConnectButton.Custom>
+        );
 };
 
-export default ConnectWalletButton
+export default dynamic(Promise.resolve(ConnectWalletButton), {ssr: false});
